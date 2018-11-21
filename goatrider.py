@@ -106,7 +106,7 @@ def read_file( filename ):
 #
 #        Make a JSON file to hold the time that each file was downloaded.
         
-def downlaod_alexa( ):
+def download_alexa( ):
     if use_remote == True:
         url = ("%s/%s.zip" % (AMAZON_URL, TOP_1M_FILE ) )
         domains = download_unzip(url)
@@ -305,7 +305,7 @@ def download_feeds():
 
     # TODO Add multithreading to the downloads
     try:
-        l_alexa   = downlaod_alexa( )
+        l_alexa   = download_alexa( )
         l_banlist = download_binarybanlist( )
         l_torlist = download_binarytorlist()
         l_otxlist = download_otx()
