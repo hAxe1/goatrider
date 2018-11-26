@@ -186,7 +186,7 @@ def search_binarybanlist( hostlist ):
 
     for hosts in hostlist:
         hosts = hosts.rstrip()
-        if hosts in bd_banlist:
+        if hosts in bd_banlist.split():
             if hosts != "":
                 banlist_findings_lock.acquire()
                 banlist_findings[ 'banlist' ].append( hosts )
@@ -205,7 +205,7 @@ def search_binarytorlist( hostlist ):
 
     for hosts in hostlist:
         hosts = hosts.rstrip()
-        if hosts in bd_tor:
+        if hosts in bd_tor.split():
             if hosts != "":
                 banlist_findings_lock.acquire()
                 banlist_findings[ 'tor' ].append( hosts )
@@ -225,7 +225,7 @@ def search_otx( hostlist ):
     # FORMAT: ALL: 46.4.123.15 # Malicious Host
     for hosts in hostlist:
         hosts = hosts.rstrip()
-        if hosts in otx:
+        if hosts in otx.split():
             if hosts != "":
                 banlist_findings_lock.acquire()
                 banlist_findings[ 'otx' ].append( hosts )
